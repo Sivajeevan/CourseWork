@@ -61,3 +61,4 @@ ggsave("plot_histogram.png", h, width = 7, height = 4, dpi = 200)
 # Finish
 message("Done. Files created: world_happiness_combined_2015_2022.csv, plot_scatter.png, plot_histogram.png, analysis_results.txt")
 
+
