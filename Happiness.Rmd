@@ -172,6 +172,7 @@ ggplot(happiness, aes(x = GDP, y = Score, color = Region)) +
        x = "GDP per Capita", y = "Happiness Score") +
   theme_light()
 
+#boxplot
 ggplot(happiness, aes(x = Region, y = Score, fill = Region)) +
   geom_boxplot(alpha = 0.6, outlier.shape = NA) +
   geom_jitter(width = 0.2, alpha = 0.4, color = "black") +
@@ -195,12 +196,12 @@ ggplot(melted_corr, aes(x = Var1, y = Var2, fill = value)) +
   geom_text(aes(label = round(value, 2)), color = "black", size = 3) +
   scale_fill_gradient2(low = "red", high = "blue", mid = "white", midpoint = 0) +
   labs(title = "Correlation Heatmap of Happiness Factors") +
-  theme_minimal()
+  theme_minimal() #correlation
 
 
 happiness %>%
   group_by(Year, Region) %>%
-  summarise(mean_score = mean(Score, na.rm = TRUE), .groups = "drop") %>%
+  summarise(mean_score = mean(Score, na.rm = TRUE), .groups = "drop") %>%  #summary
   ggplot(aes(x = Year, y = mean_score, color = Region)) +
   geom_line(size = 1.2) +
   geom_point(size = 2) +
@@ -299,6 +300,7 @@ region_means <- happiness %>%
 print(region_means)
 
 ```
+
 
 
 
